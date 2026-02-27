@@ -25,6 +25,7 @@ export default function CompanyProfilePage() {
   }
 
   function saveNote(value: string) {
+    if (!company) return;
     setNotes(value);
     const all = storage.getNotes();
     all[company.id] = value;
@@ -32,6 +33,7 @@ export default function CompanyProfilePage() {
   }
 
   function saveToList() {
+    if (!company) return;
     const lists = storage.getLists();
     if (!lists.length) return alert("Create a list first on /lists");
     const updated = lists.map((l, idx) =>
@@ -42,6 +44,7 @@ export default function CompanyProfilePage() {
   }
 
   async function runEnrichment() {
+    if (!company) return;
     setLoading(true);
     setErr("");
     try {
