@@ -8,7 +8,7 @@ const nav = [
   { href: "/companies", label: "Companies" },
   { href: "/lists", label: "Lists" },
   { href: "/saved", label: "Saved" }
-];
+] as const;
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
